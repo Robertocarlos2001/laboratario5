@@ -1,0 +1,8 @@
+<td>{{ carreraLista.nombre }}</td>
+<td>{{ carreraLista.codigo }}</td>
+<td>{{ carreraLista.faculta }}</td>
+<td>{{ carreraLista.duracion }} años</td>
+<td>
+  <a class="btn btn-sm btn-outline-warning mr-1" [routerLink]="['/editar', carreraLista.id]" [queryParams]="{accion: 1}">Actualizar</a>
+  <a class="btn btn-sm btn-outline-danger" [routerLink]="['/editar', carreraLista.id]" [queryParams]="{accion: 2}">Eliminar</a>
+</td>

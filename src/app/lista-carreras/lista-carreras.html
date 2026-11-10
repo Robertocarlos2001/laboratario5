@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="col">
+    <h1 class="text-center">{{ titulo }}</h1>
+  </div>
+  <br>
+  <form class="form-group row">
+    <div class="form-group col-md-3">
+      <label for="nombre">Nombre</label>
+      <input type="text" class="form-control" id="nombre" placeholder="Nombre" [(ngModel)]="cuadroNombre" name="nombre">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="codigo">Código</label>
+      <input type="text" class="form-control" id="codigo" placeholder="Código" [(ngModel)]="cuadroCodigo" name="codigo">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="faculta">Facultad</label>
+      <input type="text" class="form-control" id="faculta" placeholder="Facultad" [(ngModel)]="cuadroFaculta" name="faculta">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="duracion">Duración (años)</label>
+      <input type="number" class="form-control" id="duracion" placeholder="Duración" [(ngModel)]="cuadroDuracion" name="duracion">
+    </div>
+    <div class="form-group col-md-12">
+      <button type="button" class="btn btn-outline-success" (click)="agregar_carrera()">Agregar Carrera</button>
+    </div>
+  </form>
+
+  <div class="table-responsive">
+    <table class="table table-striped table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Código</th>
+          <th>Facultad</th>
+          <th>Duración</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (carrera of carreras; track carrera.id) {
+          <tr app-tarjeta-carrera [carreraLista]="carrera"></tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
